@@ -25,12 +25,10 @@ void setup() {
 
 void draw () {
   if (imageSelected) {
-    //println(imgPath);
     noStroke();
     pg = createGraphics(w, h);
     pg.beginDraw();
     img = loadImage(imgPath);
-    //img.loadPixels();
     for (int x=0; x < w; x++) {
       for (int y=0; y < h; y++) {
         int loc = x+y*w;
@@ -48,7 +46,6 @@ void draw () {
         color2=getChanPlane(g, Bg, BinaryBg, cG, color2);
         color3=getChanPlane(b, Bb, BinaryBb, cB, color3);
 
-        //max 8 colors:black,white,red,green,blue,yellow,fuchsia,cyan
         img.pixels[loc]=color(color1, color2, color3);
       }
     }
@@ -74,7 +71,6 @@ void draw () {
       imgPath = null;
       planeNum = 0;
       stroke(0);
-      //frameRate(-1);
     }
   } else {
     drawUI();
@@ -98,21 +94,15 @@ int getChanPlane(int chan, int chanBright, String binChanBright, char binChar, c
 void fileSelected(File selection) {
   if (dialog==true) {
     if (selection != null) {
-      //  background(51);
-      //println("User selected " + selection.getAbsolutePath());
       imgPath = selection.getAbsolutePath(); 
       img = loadImage(imgPath);
-
-      //println(selection);
       w  = img.width;
       h = img.height;
-      //pg = createGraphics(w, h);
       imageMode(CENTER);
       adapt();
       image(img, width/2, height/2, W, H);
       message = "Copying the original image to your project folder...";
       infoMessage();
-      //pg.copy(img, 0, 0, img.width, img.height, 0, 0, img.width, img.height);
       img.save("data/" + "original" + " " + random(0, 1000) + ".jpg");
       imageSelected = true;
       background(51);
@@ -179,7 +169,6 @@ void keyPressed() {
     imgPath = null;
     planeNum = 0;
     stroke(0);
-    //frameRate(-1);
   }
 }
 
