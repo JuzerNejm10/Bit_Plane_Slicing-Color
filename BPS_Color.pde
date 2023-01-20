@@ -63,14 +63,7 @@ void draw () {
     if (planeNum<7) {
       planeNum++;
     } else {
-      background(51);
-      dialog=false;
-      message="";
-      imageSelected = false;
-      img=null;
-      imgPath = null;
-      planeNum = 0;
-      stroke(0);
+      init();
     }
   } else {
     drawUI();
@@ -161,14 +154,7 @@ void mousePressed() {
 
 void keyPressed() {
   if (key == BACKSPACE) {
-    background(51);
-    dialog=false;
-    message="";
-    imageSelected = false;
-    img=null;
-    imgPath = null;
-    planeNum = 0;
-    stroke(0);
+    init();
   }
 }
 
@@ -195,4 +181,15 @@ void drawUI() {
   }
   fill(255);
   text("SELECT IMAGE", (width/2)-3, (height/2));
+}
+
+void init() {
+  background(51);
+  dialog=false;
+  message="";
+  imageSelected = false;
+  img=null;
+  imgPath = null;
+  planeNum = 0;
+  stroke(0);
 }
