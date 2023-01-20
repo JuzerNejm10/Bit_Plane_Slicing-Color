@@ -186,11 +186,6 @@ void drawUI() {
       cursor(HAND);
       fill(0, 25);
       rect((width/2)-70, (height/2)-30, 140, 60);
-    } else {
-      background(51);
-      cursor(ARROW);
-      fill(0, 25);
-      rect((width/2)-60, (height/2)-25, 120, 50);
     }
   } else {
     background(51);
