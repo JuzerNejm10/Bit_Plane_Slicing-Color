@@ -20,7 +20,10 @@ Example of BPS-Color in action (the original img followed by planes 1-8):
 
 
 
-BTW you can download Desktop Windows App under Releases (should be somewhere on your right)...
+BTW you can download Desktop Windows App under Releases,
+here's a shortcut:
+
+https://github.com/JuzerNejm10/Bit_Plane_Slicing-Color/releases/tag/v.01
 
 
 
