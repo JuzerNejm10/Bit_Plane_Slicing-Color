@@ -51,9 +51,6 @@ void draw () {
     }
     img.updatePixels();
     pg.copy(img, 0, 0, img.width, img.height, 0, 0, img.width, img.height);
-    imageMode(CENTER);
-    adapt();
-
     image(img, width/2, height/2, W, H);
     message = "Please wait while I obtain plane" + (planeNum+1) + " & save the image to your project folder...";
     infoMessage();
