@@ -21,7 +21,6 @@ Example of BPS-Color in action (the original img followed by planes 1-8):
 
 
 
-
   
 
 
