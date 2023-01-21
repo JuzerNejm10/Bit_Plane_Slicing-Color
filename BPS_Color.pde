@@ -82,7 +82,7 @@ int getChanPlane(int chan, int chanBright, String binChanBright, char binChar, c
 }
 
 void fileSelected(File selection) {
-  if (dialog==true) {
+  if (dialog) {
     if (selection != null) {
       imgPath = selection.getAbsolutePath(); 
       img = loadImage(imgPath);
