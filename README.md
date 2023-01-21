@@ -9,10 +9,10 @@ Image selection is done via file dialog and you can cancel the currently process
 Original image is first copied to data folder of the project and then one by one the planes (8 of them) are computed, showed on the screen and saved to data folder.   
 Escape the app with ESC or alternatively ALT+F4 (Command-Q on Mac).
 
-Images are made to fit screen with the adapt function (took some effort to come up with that one :/)
+Images are made to fit the screen with the adapt function (took some effort to come up with that one :/)
 
 
-Example of BPS-Color in action (the original img followed by planes 1-8):
+Example of BPS-Color in action (original img followed by planes 1-8):
 
 ![original](https://user-images.githubusercontent.com/107032742/213793254-ed90719d-ea8f-4c1f-bafe-b315705b9538.jpg)
 
