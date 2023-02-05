@@ -53,7 +53,7 @@ void draw () {
     img.updatePixels();
     pg.copy(img, 0, 0, img.width, img.height, 0, 0, img.width, img.height);
     image(img, width/2, height/2, W, H);
-    message = "Please wait while I obtain plane" + (planeNum+1) + " & save the image to your project folder...";
+    message = "Please wait while I obtain plane" + (planeNum+1) + " - image will be saved to your project folder...";
     infoMessage();
     pg.endDraw();
     pg.save("data/" + "plane" + (planeNum+1) + " " + random(0, 1000) + ".jpg");
