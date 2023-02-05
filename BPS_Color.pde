@@ -46,7 +46,8 @@ void draw () {
         color2=getChanPlane(g, Bg, BinaryBg, cG, color2);
         color3=getChanPlane(b, Bb, BinaryBb, cB, color3);
 
-        img.pixels[loc]=color(color1, color2, color3);
+        color c = (color1 << 16) | (color2 <<8) | color3;
+        img.pixels[loc]=c;
       }
     }
     img.updatePixels();
