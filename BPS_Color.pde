@@ -13,6 +13,7 @@ int planeNum=0;
 
 float W, H;
 float diffPerW, diffPerH;
+int halfWidth, halfHeight;
 
 void setup() {
   fullScreen();
@@ -20,6 +21,8 @@ void setup() {
   surface.setIcon(icon);
   background(51);
   textAlign(CENTER, CENTER);
+  halfWidth = width>>1;
+  halfHeight = height>>1;
   drawUI();
 }
 
@@ -52,7 +55,7 @@ void draw () {
     }
     img.updatePixels();
     pg.copy(img, 0, 0, img.width, img.height, 0, 0, img.width, img.height);
-    image(img, width/2, height/2, W, H);
+    image(img, halfWidth, halfHeight, W, H);
     message = "Please wait while I obtain plane" + (planeNum+1) + " - image will be saved to your project folder...";
     infoMessage();
     pg.endDraw();
@@ -91,7 +94,7 @@ void fileSelected(File selection) {
       h = img.height;
       imageMode(CENTER);
       adapt();
-      image(img, width/2, height/2, W, H);
+      image(img, halfWidth, halfHeight, W, H);
       message = "Copying the original image to your project folder...";
       infoMessage();
       img.save("data/" + "original" + " " + random(0, 1000) + ".jpg");
@@ -141,8 +144,8 @@ void calcW() {
 }
 
 void mousePressed() {
-  if (mouseX>(width/2)-50&&mouseX<(width/2)+50) {
-    if (mouseY>(height/2)-25&&mouseY<(height/2)+25) {
+  if (mouseX>halfWidth-50&&mouseX<halfWidth+50) {
+    if (mouseY>halfHeight-25&&mouseY<halfHeight+25) {
       noFill();
       dialog=true;
       selectInput("Select an image to process:", "fileSelected");
@@ -158,27 +161,27 @@ void keyPressed() {
 
 void infoMessage() {
   fill(0, 200);
-  rect(width/2-250, height/2-20, 450, 40);
+  rect(halfWidth-250, halfHeight-20, 450, 40);
   fill(255);
-  text(message, width/2, height/2);
+  text(message, halfWidth, halfHeight);
 }
 
 void drawUI() {
-  if (mouseX>(width/2)-50&&mouseX<(width/2)+50) {
-    if (mouseY>(height/2)-24&&mouseY<(height/2)+24) {
+  if (mouseX>halfWidth-50&&mouseX<halfWidth+50) {
+    if (mouseY>halfHeight-24&&mouseY<halfHeight+24) {
       background(51);
       cursor(HAND);
       fill(0, 25);
-      rect((width/2)-70, (height/2)-30, 140, 60);
+      rect(halfWidth-70, halfHeight-30, 140, 60);
     }
   } else {
     background(51);
     cursor(ARROW);
     fill(0, 25);
-    rect((width/2)-60, (height/2)-25, 120, 50);
+    rect(halfWidth-60, halfHeight-25, 120, 50);
   }
   fill(255);
-  text("SELECT IMAGE", (width/2)-3, (height/2));
+  text("SELECT IMAGE", halfWidth-3, halfHeight);
 }
 
 void init() {
